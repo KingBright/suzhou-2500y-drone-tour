@@ -1,0 +1,14 @@
+# Dependencies & Build Outputs
+web/node_modules/
+web/dist/
+*.log
+.DS_Store
+
+# Large raw QA captures & local video renders (video published via GitHub Releases)
+qa/shots/
+qa/recordings/
+qa/audit-report.json
+
+# Blender backups
+*.blend1
+*.blend2

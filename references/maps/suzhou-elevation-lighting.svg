@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1020" width="1840" height="1020">
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Inter', -apple-system, sans-serif; }
+      .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .title { font-size: 25px; font-weight: 700; fill: #f8fafc; }
+      .subtitle { font-size: 13px; fill: #94a3b8; }
+      .axis-lbl { font-size: 11px; fill: #94a3b8; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .st-lbl { font-size: 11px; font-weight: 700; fill: #f8fafc; }
+      .st-h { font-size: 10px; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; fill: #fde68a; }
+      .alt-tag { font-size: 10px; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; font-weight: 700; }
+    </style>
+    <!-- Continuous Golden Hour -> Dusk -> Blue Hour Sky Gradient -->
+    <linearGradient id="skyTimeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c26434"/>
+      <stop offset="16%" stop-color="#d97b42"/>
+      <stop offset="30%" stop-color="#9e526b"/>
+      <stop offset="48%" stop-color="#5d3e72"/>
+      <stop offset="62%" stop-color="#353166"/>
+      <stop offset="72%" stop-color="#1b2a59"/>
+      <stop offset="86%" stop-color="#0e1e45"/>
+      <stop offset="100%" stop-color="#071129"/>
+    </linearGradient>
+    <linearGradient id="skyVertFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.62"/>
+      <stop offset="62%" stop-color="#020617" stop-opacity="0.18"/>
+      <stop offset="92%" stop-color="#fde68a" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="droneLineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="45%" stop-color="#f472b6"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glowLine" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1840" height="1020" fill="#0a0f1c"/>
+
+  <!-- Header -->
+  <text x="100" y="45" class="title">SUZHOU 2500Y · 西→东航线高程剖面与 2500 年动态天光渐变图</text>
+  <text x="100" y="68" class="subtitle">Flight Altitude Profile (6m–465m)  |  True Landmark Heights (16m–450m)  |  Golden Hour → Dusk → Blue Hour Lighting &amp; Emissive Schedule</text>
+
+  <!-- Main Sky Backdrop -->
+  <rect x="100" y="120" width="1650" height="560" rx="8" fill="url(#skyTimeGrad)"/>
+  <rect x="100" y="120" width="1650" height="560" rx="8" fill="url(#skyVertFade)" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- Era Band Headers inside top of chart -->
+  <text x="248.5" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fef3c7">ACT I · 金色夕阳 Golden Hour (t=0.12–0.22)</text>
+  <text x="727.0" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#f5d0fe">ACT II · 粉紫暮色 Dusk Twilight (t=0.34–0.68)</text>
+  <text x="1172.5" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#bae6fd">ACT III · 穿门跃迁 (t=0.78)</text>
+  <text x="1519.0" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7dd3fc">ACT IV · 蓝调璀璨夜景 Blue Hour Night (t=0.85–1.00)</text>
+
+  <!-- Era dividers -->
+  <line x1="388.8" y1="120" x2="388.8" y2="680" stroke="#ffffff" stroke-opacity="0.22" stroke-dasharray="5 5"/>
+  <line x1="1081.8" y1="120" x2="1081.8" y2="680" stroke="#ffffff" stroke-opacity="0.28" stroke-dasharray="5 5"/>
+  <line x1="1255.0" y1="120" x2="1255.0" y2="680" stroke="#ffffff" stroke-opacity="0.25" stroke-dasharray="5 5"/>
+
+  <line x1="100" y1="680.0" x2="1750" y2="680.0" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="88" y="684.0" text-anchor="end" class="axis-lbl">0m</text>
+  <text x="1762" y="684.0" text-anchor="start" class="axis-lbl">0m</text>
+  <line x1="100" y1="621.7" x2="1750" y2="621.7" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="625.7" text-anchor="end" class="axis-lbl">50m</text>
+  <text x="1762" y="625.7" text-anchor="start" class="axis-lbl">50m</text>
+  <line x1="100" y1="563.3" x2="1750" y2="563.3" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="88" y="567.3" text-anchor="end" class="axis-lbl">100m</text>
+  <text x="1762" y="567.3" text-anchor="start" class="axis-lbl">100m</text>
+  <line x1="100" y1="505.0" x2="1750" y2="505.0" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="509.0" text-anchor="end" class="axis-lbl">150m</text>
+  <text x="1762" y="509.0" text-anchor="start" class="axis-lbl">150m</text>
+  <line x1="100" y1="446.7" x2="1750" y2="446.7" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="450.7" text-anchor="end" class="axis-lbl">200m</text>
+  <text x="1762" y="450.7" text-anchor="start" class="axis-lbl">200m</text>
+  <line x1="100" y1="388.3" x2="1750" y2="388.3" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="392.3" text-anchor="end" class="axis-lbl">250m</text>
+  <text x="1762" y="392.3" text-anchor="start" class="axis-lbl">250m</text>
+  <line x1="100" y1="330.0" x2="1750" y2="330.0" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="88" y="334.0" text-anchor="end" class="axis-lbl">300m</text>
+  <text x="1762" y="334.0" text-anchor="start" class="axis-lbl">300m</text>
+  <line x1="100" y1="271.7" x2="1750" y2="271.7" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="275.7" text-anchor="end" class="axis-lbl">350m</text>
+  <text x="1762" y="275.7" text-anchor="start" class="axis-lbl">350m</text>
+  <line x1="100" y1="213.3" x2="1750" y2="213.3" stroke="#ffffff" stroke-opacity="0.11" stroke-width="1"/>
+  <text x="88" y="217.3" text-anchor="end" class="axis-lbl">400m</text>
+  <text x="1762" y="217.3" text-anchor="start" class="axis-lbl">400m</text>
+  <line x1="100" y1="155.0" x2="1750" y2="155.0" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="88" y="159.0" text-anchor="end" class="axis-lbl">450m</text>
+  <text x="1762" y="159.0" text-anchor="start" class="axis-lbl">450m</text>
+  <rect x="100" y="678.1" width="1650" height="7.9" fill="#0c4a6e" fill-opacity="0.8"/>
+  <polygon points="144.0,678.1 148.0,664.1 184.0,664.1 188.0,678.1" fill="#1e1b29" stroke="#fbbf24" stroke-width="1"/><polygon points="158.0,678.1 161.0,636.7 166.0,628.7 171.0,636.7 174.0,678.1" fill="#1e1b29" stroke="#fbbf24" stroke-width="1.3"/>
+  <line x1="166.0" y1="680" x2="166.0" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="166.0" y="704" text-anchor="middle" class="st-lbl">01 寒山寺&amp;枫桥</text>
+  <text x="166.0" y="719" text-anchor="middle" class="st-h">H=44m · t=0.12</text>
+  <path d="M 276.5 678.1 Q 314.5 632.7 352.5 678.1 Z" fill="#1b3328" stroke="#4ade80" stroke-opacity="0.5" stroke-width="1"/><polygon points="307.5,642.7 315.0,590.3 319.0,584.3 323.0,590.3 321.5,642.7" fill="#1e1b29" stroke="#fbbf24" stroke-width="1.4"/>
+  <line x1="314.5" y1="680" x2="314.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="314.5" y="704" text-anchor="middle" class="st-lbl">02 西园&amp;虎丘塔</text>
+  <text x="314.5" y="719" text-anchor="middle" class="st-h">H=82m · t=0.22</text>
+  <path d="M 420.5 678.1 L 424.5 666.3 L 438.5 666.3 L 446.5 661.3 L 454.5 667.3 L 470.5 669.3 L 472.5 678.1 Z" fill="#1e1b29" stroke="#fbbf24" stroke-width="1.2"/>
+  <line x1="446.5" y1="680" x2="446.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="446.5" y="704" text-anchor="middle" class="st-lbl">03 留园</text>
+  <text x="446.5" y="719" text-anchor="middle" class="st-h">H=16m · t=0.34</text>
+  <polygon points="568.5,678.1 573.5,622.7 578.5,614.7 583.5,622.7 588.5,678.1" fill="#1e1b29" stroke="#fbbf24" stroke-width="1.3"/><path d="M 590.5 678.1 Q 603.5 661.3 616.5 678.1" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="578.5" y1="680" x2="578.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="578.5" y="704" text-anchor="middle" class="st-lbl">04 盘门&amp;沧浪亭</text>
+  <text x="578.5" y="719" text-anchor="middle" class="st-h">H=56m · t=0.44</text>
+  <polygon points="696.5,678.1 699.5,644.0 702.5,638.0 705.5,644.0 708.5,678.1" fill="#1e1b29" stroke="#f472b6" stroke-width="1.2"/><polygon points="712.5,678.1 715.5,644.0 718.5,638.0 721.5,644.0 724.5,678.1" fill="#1e1b29" stroke="#f472b6" stroke-width="1.2"/>
+  <line x1="710.5" y1="680" x2="710.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="710.5" y="704" text-anchor="middle" class="st-lbl">05 网师&amp;双塔</text>
+  <text x="710.5" y="719" text-anchor="middle" class="st-h">H=36m · t=0.52</text>
+  <polygon points="830.5,678.1 836.5,601.0 842.5,589.0 848.5,601.0 854.5,678.1" fill="#1e1b29" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="842.5" y1="680" x2="842.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="842.5" y="704" text-anchor="middle" class="st-lbl">06 北寺塔&amp;平江</text>
+  <text x="842.5" y="719" text-anchor="middle" class="st-h">H=78m · t=0.60</text>
+  <polygon points="963.0,678.1 971.0,660.7 985.0,664.7 997.0,656.7 1009.0,662.7 1019.0,678.1" fill="#e2e8f0" fill-opacity="0.25" stroke="#f8fafc" stroke-width="1.3"/>
+  <line x1="991.0" y1="680" x2="991.0" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="991.0" y="704" text-anchor="middle" class="st-lbl">07 三园&amp;苏博</text>
+  <text x="991.0" y="719" text-anchor="middle" class="st-h">H=20m · t=0.68</text>
+  <path d="M 1140.5 678.1 L 1144.5 345.7 Q 1172.5 323.7 1200.5 345.7 L 1204.5 678.1 L 1186.5 678.1 L 1185.5 437.5 Q 1172.5 417.5 1159.5 437.5 L 1158.5 678.1 Z" fill="#0f2947" stroke="#38bdf8" stroke-width="1.8"/><circle cx="1172.5" cy="534.2" r="5.5" fill="#facc15" stroke="#090d16" stroke-width="1.5"/>
+  <line x1="1172.5" y1="680" x2="1172.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="1172.5" y="704" text-anchor="middle" class="st-lbl">08 东方之门</text>
+  <text x="1172.5" y="719" text-anchor="middle" class="st-h">H=302m · t=0.78</text>
+  <path d="M 1291.0 678.1 Q 1321.0 652.0 1351.0 678.1" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+  <line x1="1321.0" y1="680" x2="1321.0" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="1321.0" y="704" text-anchor="middle" class="st-lbl">09 李公堤</text>
+  <text x="1321.0" y="719" text-anchor="middle" class="st-h">H=24m · t=0.85</text>
+  <circle cx="1453.0" cy="596.0" r="67.7" fill="none" stroke="#38bdf8" stroke-width="2.2"/><circle cx="1453.0" cy="596.0" r="52.8" fill="none" stroke="#f472b6" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="3 3"/><line x1="1422.5" y1="678.1" x2="1453.0" y2="596.0" stroke="#94a3b8" stroke-width="1.6"/><line x1="1483.5" y1="678.1" x2="1453.0" y2="596.0" stroke="#94a3b8" stroke-width="1.6"/>
+  <line x1="1453.0" y1="680" x2="1453.0" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="1453.0" y="704" text-anchor="middle" class="st-lbl">10 MoCA&amp;摩天轮</text>
+  <text x="1453.0" y="719" text-anchor="middle" class="st-h">H=130m · t=0.90</text>
+  <path d="M 1534.5 678.1 Q 1568.5 623.0 1602.5 678.1 Z" fill="#1e3a5f" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="1568.5" y1="680" x2="1568.5" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="1568.5" y="704" text-anchor="middle" class="st-lbl">11 文化艺术中心</text>
+  <text x="1568.5" y="719" text-anchor="middle" class="st-h">H=42m · t=0.94</text>
+  <polygon points="1662.0,678.1 1667.0,197.0 1673.0,167.0 1681.0,183.0 1693.0,155.0 1702.0,190.0 1706.0,678.1" fill="#0c264a" stroke="#38bdf8" stroke-width="1.8"/><line x1="1678.0" y1="678.1" x2="1680.0" y2="179.0" stroke="#7dd3fc" stroke-opacity="0.55" stroke-width="1"/><line x1="1690.0" y1="678.1" x2="1692.0" y2="163.0" stroke="#fde047" stroke-opacity="0.65" stroke-width="1.2"/>
+  <line x1="1684.0" y1="680" x2="1684.0" y2="688" stroke="#64748b" stroke-width="1"/>
+  <text x="1684.0" y="704" text-anchor="middle" class="st-lbl">12 苏州IFS</text>
+  <text x="1684.0" y="719" text-anchor="middle" class="st-h">H=450m · t=1.00</text>
+  <path d="M 124.8 663.7 C 143.3 663.7, 147.4 647.3, 166.0 647.3 C 199.4 647.3, 206.8 668.3, 240.2 668.3 C 273.7 668.3, 281.1 607.7, 314.5 607.7 C 344.2 607.7, 350.8 666.0, 380.5 666.0 C 410.2 666.0, 416.8 649.7, 446.5 649.7 C 476.2 649.7, 482.8 670.7, 512.5 670.7 C 542.2 670.7, 548.8 638.0, 578.5 638.0 C 604.5 638.0, 610.3 671.8, 636.2 671.8 C 669.7 671.8, 677.1 642.7, 710.5 642.7 C 740.2 642.7, 746.8 631.0, 776.5 631.0 C 806.2 631.0, 812.8 596.0, 842.5 596.0 C 875.9 596.0, 883.3 667.2, 916.8 667.2 C 950.2 667.2, 957.6 640.3, 991.0 640.3 C 1035.5 640.3, 1045.5 557.5, 1090.0 557.5 C 1127.1 557.5, 1135.4 534.2, 1172.5 534.2 C 1205.9 534.2, 1213.3 673.0, 1246.8 673.0 C 1280.2 673.0, 1287.6 670.7, 1321.0 670.7 C 1354.4 670.7, 1361.8 635.7, 1395.2 635.7 C 1421.2 635.7, 1427.0 593.7, 1453.0 593.7 C 1479.0 593.7, 1484.8 647.3, 1510.8 647.3 C 1536.7 647.3, 1542.5 624.0, 1568.5 624.0 C 1594.5 624.0, 1600.3 487.5, 1626.2 487.5 C 1652.2 487.5, 1658.0 137.5, 1684.0 137.5 C 1706.3 137.5, 1711.2 149.2, 1733.5 149.2" fill="none" stroke="url(#droneLineGrad)" stroke-width="5.5" stroke-opacity="0.32" filter="url(#glowLine)"/>
+  <path d="M 124.8 663.7 C 143.3 663.7, 147.4 647.3, 166.0 647.3 C 199.4 647.3, 206.8 668.3, 240.2 668.3 C 273.7 668.3, 281.1 607.7, 314.5 607.7 C 344.2 607.7, 350.8 666.0, 380.5 666.0 C 410.2 666.0, 416.8 649.7, 446.5 649.7 C 476.2 649.7, 482.8 670.7, 512.5 670.7 C 542.2 670.7, 548.8 638.0, 578.5 638.0 C 604.5 638.0, 610.3 671.8, 636.2 671.8 C 669.7 671.8, 677.1 642.7, 710.5 642.7 C 740.2 642.7, 746.8 631.0, 776.5 631.0 C 806.2 631.0, 812.8 596.0, 842.5 596.0 C 875.9 596.0, 883.3 667.2, 916.8 667.2 C 950.2 667.2, 957.6 640.3, 991.0 640.3 C 1035.5 640.3, 1045.5 557.5, 1090.0 557.5 C 1127.1 557.5, 1135.4 534.2, 1172.5 534.2 C 1205.9 534.2, 1213.3 673.0, 1246.8 673.0 C 1280.2 673.0, 1287.6 670.7, 1321.0 670.7 C 1354.4 670.7, 1361.8 635.7, 1395.2 635.7 C 1421.2 635.7, 1427.0 593.7, 1453.0 593.7 C 1479.0 593.7, 1484.8 647.3, 1510.8 647.3 C 1536.7 647.3, 1542.5 624.0, 1568.5 624.0 C 1594.5 624.0, 1600.3 487.5, 1626.2 487.5 C 1652.2 487.5, 1658.0 137.5, 1684.0 137.5 C 1706.3 137.5, 1711.2 149.2, 1733.5 149.2" fill="none" stroke="url(#droneLineGrad)" stroke-width="2.8"/>
+  <circle cx="124.8" cy="663.7" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="132.8" y="639.7" text-anchor="start" class="alt-tag" fill="#22d3ee">14m 起飞</text>
+  <circle cx="166.0" cy="647.3" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="166.0" y="632.3" text-anchor="middle" class="alt-tag" fill="#facc15">28m</text>
+  <circle cx="240.2" cy="668.3" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="240.2" y="654.3" text-anchor="middle" class="alt-tag" fill="#22d3ee">10m 贴运河</text>
+  <circle cx="314.5" cy="607.7" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="314.5" y="591.7" text-anchor="middle" class="alt-tag" fill="#facc15">62m 绕斜塔</text>
+  <circle cx="380.5" cy="666.0" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="380.5" y="652.0" text-anchor="middle" class="alt-tag" fill="#22d3ee">12m 山塘俯冲</text>
+  <circle cx="446.5" cy="649.7" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="446.5" y="635.7" text-anchor="middle" class="alt-tag" fill="#facc15">26m</text>
+  <circle cx="512.5" cy="670.7" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="512.5" y="656.7" text-anchor="middle" class="alt-tag" fill="#22d3ee">8m 贴护城河</text>
+  <circle cx="578.5" cy="638.0" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="578.5" y="624.0" text-anchor="middle" class="alt-tag" fill="#facc15">36m</text>
+  <circle cx="636.2" cy="671.8" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="636.2" y="655.8" text-anchor="middle" class="alt-tag" fill="#22d3ee">7m 穿吴门桥洞</text>
+  <circle cx="710.5" cy="642.7" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="710.5" y="628.7" text-anchor="middle" class="alt-tag" fill="#facc15">32m</text>
+  <circle cx="776.5" cy="631.0" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <circle cx="842.5" cy="596.0" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="842.5" y="580.0" text-anchor="middle" class="alt-tag" fill="#facc15">72m 绕北寺塔</text>
+  <circle cx="916.8" cy="667.2" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="916.8" y="653.2" text-anchor="middle" class="alt-tag" fill="#22d3ee">11m 平江水巷</text>
+  <circle cx="991.0" cy="640.3" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="991.0" y="624.3" text-anchor="middle" class="alt-tag" fill="#facc15">34m 翻墙入苏博</text>
+  <circle cx="1090.0" cy="557.5" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1080.0" y="541.5" text-anchor="end" class="alt-tag" fill="#22d3ee">干将路极速拉升</text>
+  <circle cx="1172.5" cy="534.2" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1172.5" y="518.2" text-anchor="middle" class="alt-tag" fill="#22d3ee">125m 穿东方之门!</text>
+  <circle cx="1246.8" cy="673.0" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1246.8" y="653.0" text-anchor="middle" class="alt-tag" fill="#22d3ee">6m 60°贴湖俯冲!</text>
+  <circle cx="1321.0" cy="670.7" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1321.0" y="638.7" text-anchor="middle" class="alt-tag" fill="#facc15">8m 穿李公堤桥</text>
+  <circle cx="1395.2" cy="635.7" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <circle cx="1453.0" cy="593.7" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1453.0" y="575.7" text-anchor="middle" class="alt-tag" fill="#facc15">74m 绕128m摩天轮</text>
+  <circle cx="1510.8" cy="647.3" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <circle cx="1568.5" cy="624.0" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1568.5" y="608.0" text-anchor="middle" class="alt-tag" fill="#facc15">48m 月牙侧飘</text>
+  <circle cx="1626.2" cy="487.5" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1616.2" y="475.5" text-anchor="end" class="alt-tag" fill="#22d3ee">CBD峡谷冲刺</text>
+  <circle cx="1684.0" cy="137.5" r="4.2" fill="#facc15" stroke="#090d16" stroke-width="1.3"/>
+  <text x="1674.0" y="153.5" text-anchor="end" class="alt-tag" fill="#facc15">465m 垂直冲顶回望!</text>
+  <circle cx="1733.5" cy="149.2" r="3.4" fill="#22d3ee" stroke="#090d16" stroke-width="1.3"/>
+  <rect x="100" y="742" width="1650" height="205" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+  <text x="118" y="768" font-size="13" font-weight="700" fill="#f8fafc">LIGHTING &amp; EMISSIVE ACTIVATION CURVES · 动态天光与建筑自发光联动曲线 (≤ 3 Real-Time Lights)</text>
+  <text x="1732" y="768" text-anchor="end" class="mono" font-size="10.5" fill="#94a3b8">1 DirLight (Sun/Moon) + 1 HemiLight + 1 Fill DirLight · 0 PointLights</text>
+  <rect x="118" y="786" width="1614" height="112" rx="4" fill="#090f1e" stroke="#1e293b"/>
+  <path d="M 118.0,794.0 L 150.3,794.0 L 182.6,794.0 L 214.8,794.0 L 247.1,794.0 L 279.4,794.0 L 311.7,794.0 L 344.0,794.0 L 376.2,794.0 L 408.5,794.0 L 440.8,794.0 L 473.1,794.0 L 505.4,794.0 L 537.6,796.8 L 569.9,800.0 L 602.2,803.4 L 634.5,806.9 L 666.8,810.6 L 699.0,814.2 L 731.3,818.0 L 763.6,821.7 L 795.9,825.4 L 828.2,829.0 L 860.4,832.5 L 892.7,835.9 L 925.0,839.2 L 957.3,842.3 L 989.6,845.2 L 1021.8,848.0 L 1054.1,850.6 L 1086.4,853.0 L 1118.7,855.3 L 1151.0,857.3 L 1183.2,859.2 L 1215.5,860.9 L 1247.8,862.4 L 1280.1,863.8 L 1312.4,865.0 L 1344.6,866.1 L 1376.9,867.0 L 1409.2,867.9 L 1441.5,868.6 L 1473.8,869.3 L 1506.0,869.8 L 1538.3,870.3 L 1570.6,870.7 L 1602.9,871.0 L 1635.2,871.3 L 1667.4,871.6 L 1699.7,871.8 L 1732.0,872.0" fill="none" stroke="#fb923c" stroke-width="2.4"/>
+  <path d="M 118.0,876.2 L 150.3,875.8 L 182.6,875.2 L 214.8,874.5 L 247.1,873.6 L 279.4,872.6 L 311.7,871.5 L 344.0,870.1 L 376.2,868.4 L 408.5,866.5 L 440.8,864.3 L 473.1,861.8 L 505.4,858.9 L 537.6,855.8 L 569.9,852.3 L 602.2,848.5 L 634.5,844.6 L 666.8,840.4 L 699.0,836.2 L 731.3,832.0 L 763.6,827.9 L 795.9,823.9 L 828.2,820.2 L 860.4,816.7 L 892.7,813.6 L 925.0,810.7 L 957.3,808.2 L 989.6,806.0 L 1021.8,804.1 L 1054.1,802.4 L 1086.4,801.0 L 1118.7,799.8 L 1151.0,798.8 L 1183.2,798.0 L 1215.5,797.3 L 1247.8,796.7 L 1280.1,796.2 L 1312.4,795.8 L 1344.6,795.5 L 1376.9,795.2 L 1409.2,795.0 L 1441.5,794.8 L 1473.8,794.7 L 1506.0,794.6 L 1538.3,794.5 L 1570.6,794.4 L 1602.9,794.3 L 1635.2,794.3 L 1667.4,794.2 L 1699.7,794.2 L 1732.0,794.1" fill="none" stroke="#fbbf24" stroke-width="2.4" stroke-dasharray="7 3"/>
+  <path d="M 118.0,885.1 L 150.3,885.1 L 182.6,885.1 L 214.8,885.1 L 247.1,885.1 L 279.4,885.0 L 311.7,885.0 L 344.0,884.9 L 376.2,884.8 L 408.5,884.7 L 440.8,884.6 L 473.1,884.5 L 505.4,884.3 L 537.6,884.0 L 569.9,883.7 L 602.2,883.3 L 634.5,882.8 L 666.8,882.1 L 699.0,881.3 L 731.3,880.4 L 763.6,879.1 L 795.9,877.6 L 828.2,875.8 L 860.4,873.5 L 892.7,870.9 L 925.0,867.7 L 957.3,864.1 L 989.6,859.9 L 1021.8,855.3 L 1054.1,850.3 L 1086.4,845.0 L 1118.7,839.6 L 1151.0,834.2 L 1183.2,828.9 L 1215.5,823.9 L 1247.8,819.3 L 1280.1,815.1 L 1312.4,811.5 L 1344.6,808.3 L 1376.9,805.7 L 1409.2,803.4 L 1441.5,801.6 L 1473.8,800.1 L 1506.0,798.8 L 1538.3,797.9 L 1570.6,797.1 L 1602.9,796.4 L 1635.2,795.9 L 1667.4,795.5 L 1699.7,795.2 L 1732.0,794.9" fill="none" stroke="#38bdf8" stroke-width="2.6"/>
+  <path d="M 118.0,868.2 L 150.3,868.1 L 182.6,868.0 L 214.8,867.9 L 247.1,867.7 L 279.4,867.5 L 311.7,867.2 L 344.0,867.0 L 376.2,866.6 L 408.5,866.3 L 440.8,865.9 L 473.1,865.4 L 505.4,864.8 L 537.6,864.2 L 569.9,863.4 L 602.2,862.6 L 634.5,861.6 L 666.8,860.6 L 699.0,859.4 L 731.3,858.1 L 763.6,856.7 L 795.9,855.1 L 828.2,853.4 L 860.4,851.6 L 892.7,849.7 L 925.0,847.7 L 957.3,845.6 L 989.6,843.5 L 1021.8,841.4 L 1054.1,839.3 L 1086.4,837.3 L 1118.7,835.3 L 1151.0,833.4 L 1183.2,831.6 L 1215.5,829.9 L 1247.8,828.3 L 1280.1,826.9 L 1312.4,825.6 L 1344.6,824.4 L 1376.9,823.3 L 1409.2,822.4 L 1441.5,821.5 L 1473.8,820.8 L 1506.0,820.2 L 1538.3,819.6 L 1570.6,819.1 L 1602.9,818.7 L 1635.2,818.3 L 1667.4,818.0 L 1699.7,817.7 L 1732.0,817.5" fill="none" stroke="#f472b6" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <line x1="122" y1="920" x2="148" y2="920" stroke="#fb923c" stroke-width="2.6"/><text x="155" y="924" class="mono" font-size="10.5" fill="#fed7aa">Sun / DirLight Elevation (18°→3°→-8°)</text>
+  <line x1="440" y1="920" x2="466" y2="920" stroke="#fbbf24" stroke-width="2.6" stroke-dasharray="7 3"/><text x="473" y="924" class="mono" font-size="10.5" fill="#fde68a">Emissive_Warm (#ffba66 古塔灯笼)</text>
+  <line x1="740" y1="920" x2="766" y2="920" stroke="#38bdf8" stroke-width="2.6"/><text x="773" y="924" class="mono" font-size="10.5" fill="#bae6fd">Emissive_Cyan/Gold (#4de2ff/#ffd98a CBD灯光秀)</text>
+  <line x1="1125" y1="920" x2="1151" y2="920" stroke="#f472b6" stroke-width="2" stroke-dasharray="3 3"/><text x="1158" y="924" class="mono" font-size="10.5" fill="#fbcfe8">Selective Bloom Strength</text>
+  <text x="1732" y="924" text-anchor="end" class="mono" font-size="10.5" fill="#94a3b8">Presets: auto · dawn · golden · dusk · night</text>
+</svg>

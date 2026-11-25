@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>一镜飞越 2500 年苏州 · Suzhou 2500Y Drone Tour</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c1322'/><path d='M16 44L32 14L48 44Z' fill='none' stroke='%23f5c87a' stroke-width='4'/></svg>" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="webgl-canvas"></canvas>
+      <canvas id="speedlines-canvas"></canvas>
+      <div id="vignette-overlay"></div>
+      <div id="hud-root"></div>
+      <div id="lookdev-root"></div>
+      <div id="loading-overlay">
+        <div class="loading-card">
+          <div class="loading-emblem">姑苏 · 金鸡湖</div>
+          <h1 class="loading-title">一镜飞越 2500 年苏州</h1>
+          <p class="loading-sub">Suzhou 2500Y Continuous FPV Cinema</p>
+          <div class="loading-bar-track">
+            <div class="loading-bar-fill" id="loading-bar-fill"></div>
+          </div>
+          <div class="loading-status" id="loading-status">正在构建姑苏水系与双城全景…</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

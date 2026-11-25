@@ -1,0 +1,400 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1140" width="1840" height="1140">
+  <defs>
+    <style>
+      text { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Inter', -apple-system, sans-serif; }
+      .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .title { font-size: 26px; font-weight: 700; fill: #f8fafc; letter-spacing: 0.5px; }
+      .subtitle { font-size: 13px; fill: #94a3b8; }
+      .grid-lbl { font-size: 10.5px; fill: #64748b; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .zone-lbl { font-size: 12px; font-weight: 700; letter-spacing: 1px; opacity: 0.85; }
+      .water-lbl { font-size: 11px; fill: #7dd3fc; font-weight: 600; opacity: 0.9; }
+      .st-num { font-size: 11.5px; font-weight: 800; fill: #090d16; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .st-title { font-size: 12.5px; font-weight: 700; fill: #f8fafc; }
+      .st-sub { font-size: 10px; fill: #cbd5e1; font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace; }
+      .legend-hdr { font-size: 11.5px; font-weight: 700; fill: #e2e8f0; }
+      .legend-txt { font-size: 10.5px; fill: #cbd5e1; }
+    </style>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#191418"/>
+      <stop offset="32%" stop-color="#171422"/>
+      <stop offset="58%" stop-color="#11192d"/>
+      <stop offset="100%" stop-color="#091326"/>
+    </linearGradient>
+    <linearGradient id="eraOverlay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.09"/>
+      <stop offset="28%" stop-color="#f59e0b" stop-opacity="0.06"/>
+      <stop offset="48%" stop-color="#c084fc" stop-opacity="0.07"/>
+      <stop offset="68%" stop-color="#38bdf8" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.11"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e4a73"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+    <radialGradient id="lakeGrad" cx="48%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#135d8c" stop-opacity="0.95"/>
+      <stop offset="75%" stop-color="#0c3d62" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#072844" stop-opacity="0.98"/>
+    </radialGradient>
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowSwoop" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrowScenic" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#fbbf24"/>
+    </marker>
+    <clipPath id="mapClip">
+      <rect x="90" y="125" width="1660.0" height="914.2" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1840" height="1140" fill="#0a0f1c"/>
+
+  <!-- Header Bar -->
+  <text x="90" y="46" class="title">SUZHOU 2500Y DRONE TOUR · 全城古今 12 站航线与世界坐标总图</text>
+  <text x="90" y="70" class="subtitle">1:1 World Coordinate Reference (world-layout.json)  |  Unit: 1 Blender Unit = 1 Meter  |  Bounds: X [-1700m, +1750m] × Z [-950m, +950m]  |  Water Y=0.0m, Ground Y=1.6m</text>
+
+  <!-- Coordinate System Pill (top right) -->
+  <rect x="1405" y="24" width="345" height="58" rx="8" fill="#111827" stroke="#334155" stroke-width="1"/>
+  <text x="1422" y="46" class="mono" font-size="11.5" fill="#fbbf24" font-weight="700">COORDINATE SPEC (+Y UP)</text>
+  <text x="1422" y="66" class="mono" font-size="10.5" fill="#cbd5e1">West=-X  East=+X  North=-Z  South=+Z</text>
+
+  <!-- Map Frame Background -->
+  <rect x="90" y="125" width="1660.0" height="914.2" rx="8" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <g clip-path="url(#mapClip)">
+    <!-- Era atmospheric wash -->
+    <rect x="90" y="125" width="1660.0" height="914.2" fill="url(#eraOverlay)"/>
+
+    <!-- Era Divider Lines -->
+    <line x1="556.7" y1="125" x2="556.7" y2="1039.2" stroke="#f59e0b" stroke-opacity="0.22" stroke-dasharray="6 6" stroke-width="1.2"/>
+    <line x1="1122.1" y1="125" x2="1122.1" y2="1039.2" stroke="#c084fc" stroke-opacity="0.28" stroke-dasharray="6 6" stroke-width="1.2"/>
+    <line x1="1297.7" y1="125" x2="1297.7" y2="1039.2" stroke="#38bdf8" stroke-opacity="0.25" stroke-dasharray="6 6" stroke-width="1.2"/>
+
+    <line x1="138.1" y1="125" x2="138.1" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="234.3" y1="125" x2="234.3" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="330.6" y1="125" x2="330.6" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="426.8" y1="125" x2="426.8" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="523.0" y1="125" x2="523.0" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="619.3" y1="125" x2="619.3" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="715.5" y1="125" x2="715.5" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="811.7" y1="125" x2="811.7" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="908.0" y1="125" x2="908.0" y2="1039.2" stroke="#334155" stroke-width="1.1"/>
+    <line x1="1004.2" y1="125" x2="1004.2" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1100.4" y1="125" x2="1100.4" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1196.7" y1="125" x2="1196.7" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1292.9" y1="125" x2="1292.9" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1389.1" y1="125" x2="1389.1" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1485.4" y1="125" x2="1485.4" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1581.6" y1="125" x2="1581.6" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="1677.8" y1="125" x2="1677.8" y2="1039.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="197.2" x2="1750.0" y2="197.2" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="293.4" x2="1750.0" y2="293.4" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="389.6" x2="1750.0" y2="389.6" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="485.9" x2="1750.0" y2="485.9" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="582.1" x2="1750.0" y2="582.1" stroke="#334155" stroke-width="1.1"/>
+    <line x1="90" y1="678.3" x2="1750.0" y2="678.3" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="774.6" x2="1750.0" y2="774.6" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="870.8" x2="1750.0" y2="870.8" stroke="#1e293b" stroke-width="0.7"/>
+    <line x1="90" y1="967.0" x2="1750.0" y2="967.0" stroke="#1e293b" stroke-width="0.7"/>
+    <rect x="252.4" y="125" width="40.9" height="914.2" fill="url(#waterGrad)" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="1"/>
+    <text x="272.8" y="861.2" text-anchor="middle" class="water-lbl" transform="rotate(-90 272.8 861.2)">京杭大运河 Grand Canal (x=-1320, w=85m)</text>
+    <line x1="474.9" y1="418.5" x2="648.1" y2="514.7" stroke="#0e4a73" stroke-width="13.5" stroke-linecap="round"/>
+    <line x1="474.9" y1="418.5" x2="648.1" y2="514.7" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="13.5" fill="none" stroke-dasharray="2 0" opacity="0.25"/>
+    <text x="554.3" y="454.6" text-anchor="middle" class="water-lbl" transform="rotate(29 554.3 454.6)">七里山塘河 Shantang (w=28m)</text>
+    <rect x="677.0" y="389.6" width="413.8" height="394.6" rx="12" fill="#1e1b2e" fill-opacity="0.55"/>
+    <rect x="677.0" y="389.6" width="413.8" height="394.6" rx="12" fill="none" stroke="#0c4a6e" stroke-width="20.2"/>
+    <rect x="677.0" y="389.6" width="413.8" height="394.6" rx="12" fill="none" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="1.2"/>
+    <text x="677.0" y="630.2" text-anchor="middle" class="water-lbl" transform="rotate(-90 677.0 630.2)">西护城河 Outer Moat (w=42m)</text>
+    <text x="883.9" y="393.6" text-anchor="middle" class="water-lbl">北护城河 (z=-400)</text>
+    <text x="883.9" y="788.2" text-anchor="middle" class="water-lbl">南护城河 (z=+420)</text>
+    <line x1="975.3" y1="442.6" x2="975.3" y2="639.8" stroke="#0ea5e9" stroke-opacity="0.7" stroke-width="7.7" stroke-linecap="round"/>
+    <text x="968.6" y="567.7" text-anchor="end" class="water-lbl" transform="rotate(-90 968.6 567.7)">平江河 (x=140, w=16m)</text>
+    <line x1="677.0" y1="582.1" x2="1220.7" y2="582.1" stroke="#a855f7" stroke-opacity="0.35" stroke-width="6" stroke-dasharray="10 6"/>
+    <text x="1155.8" y="573.4" text-anchor="middle" class="mono" font-size="10" fill="#d8b4fe">干将路光流轴 Ganjiang Axis (z=0)</text>
+    <ellipse cx="1403.6" cy="601.3" rx="187.7" ry="221.3" fill="url(#lakeGrad)" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.6"/>
+    <text x="1403.6" y="594.1" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc" opacity="0.55" letter-spacing="4">金 鸡 湖</text>
+    <text x="1403.6" y="616.7" text-anchor="middle" class="mono" font-size="10.5" fill="#7dd3fc" opacity="0.55">Jinji Lake (cx=1030, cz=40, rx=390m, rz=460m)</text>
+    <path d="M 1283.3 745.7 Q 1389.1 769.8 1490.2 740.9" fill="none" stroke="#eab308" stroke-opacity="0.55" stroke-width="5.5" stroke-linecap="round"/>
+    <rect x="210.3" y="598.9" width="86.6" height="72.2" rx="4" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="207.9" y1="666.3" x2="256.0" y2="632.6" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="207.9" cy="666.3" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="412.4" y="356.0" width="105.9" height="105.9" rx="4" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-opacity="0.78" stroke-width="1.3"/>
+    <circle cx="388.3" cy="505.1" r="5" fill="#0f172a" stroke="#f59e0b" stroke-width="1.8"/>
+    <text x="396.3" y="509.1" font-size="9.5" fill="#e2e8f0" font-weight="600">西园寺 (-1080,-160)</text>
+    <line x1="511.0" y1="454.6" x2="465.3" y2="408.9" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="511.0" cy="454.6" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="604.8" y="509.9" width="67.4" height="57.7" rx="4" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="607.2" y1="565.3" x2="638.5" y2="538.8" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="607.2" cy="565.3" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="677.0" y="709.6" width="134.7" height="72.2" rx="4" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="684.2" y1="791.4" x2="739.6" y2="743.3" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="684.2" cy="791.4" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="898.3" y="654.3" width="96.2" height="86.6" rx="4" fill="#f472b6" fill-opacity="0.14" stroke="#f472b6" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="912.8" y1="740.9" x2="953.7" y2="690.4" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="912.8" cy="740.9" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="843.0" y="442.6" width="120.3" height="105.9" rx="4" fill="#f472b6" fill-opacity="0.14" stroke="#f472b6" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="847.8" y1="529.2" x2="903.2" y2="493.1" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="847.8" cy="529.2" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="956.1" y="413.7" width="125.1" height="115.5" rx="4" fill="#f472b6" fill-opacity="0.14" stroke="#f472b6" stroke-opacity="0.78" stroke-width="1.3"/>
+    <circle cx="1009.0" cy="536.4" r="5" fill="#0f172a" stroke="#f472b6" stroke-width="1.8"/>
+    <text x="1017.0" y="540.4" font-size="9.5" fill="#e2e8f0" font-weight="600">狮子林 (210,-95)</text>
+    <circle cx="1035.5" cy="476.2" r="5" fill="#0f172a" stroke="#f472b6" stroke-width="1.8"/>
+    <text x="1043.5" y="480.2" font-size="9.5" fill="#e2e8f0" font-weight="600">苏州博物馆 (265,-220)</text>
+    <line x1="987.4" y1="430.5" x2="1025.9" y2="473.8" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="987.4" cy="430.5" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="1167.8" y="514.7" width="105.9" height="134.7" rx="4" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.78" stroke-width="1.3"/>
+    <rect x="1208.2" y="567.2" width="25.0" height="29.8" fill="#38bdf8" fill-opacity="0.28" stroke="#facc15" stroke-width="1.8" stroke-dasharray="3 2"/>
+    <text x="1220.7" y="561.9" text-anchor="middle" class="mono" font-size="9.5" fill="#fde047" font-weight="700">ARCH 62m×195m (Y=125m)</text>
+    <line x1="1114.9" y1="623.0" x2="1220.7" y2="582.1" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="1114.9" cy="623.0" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="1297.7" y="731.3" width="182.8" height="52.9" rx="4" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="1309.7" y1="786.6" x2="1393.9" y2="755.3" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="1309.7" cy="786.6" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="1485.4" y="589.3" width="105.9" height="105.9" rx="4" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="1454.1" y1="690.4" x2="1538.3" y2="642.2" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="1454.1" cy="690.4" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="1466.1" y="425.7" width="115.5" height="91.4" rx="4" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="1446.9" y1="512.3" x2="1526.3" y2="471.4" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="1446.9" cy="512.3" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="1576.8" y="509.9" width="86.6" height="86.6" rx="4" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-opacity="0.78" stroke-width="1.3"/>
+    <line x1="1687.4" y1="572.5" x2="1317.0" y2="582.1" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="1687.4" cy="572.5" r="3.2" fill="#ffffff" fill-opacity="0.85"/>
+    <path d="M 253.6 635.0 C 301.7 562.9, 388.3 505.1, 465.3 408.9" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 253.6 635.0 C 301.7 562.9, 388.3 505.1, 465.3 408.9" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(353.1,526.7) rotate(-43.6)"/>
+    <path d="M 465.3 408.9 C 527.9 442.6, 585.6 485.9, 638.5 538.8" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 465.3 408.9 C 527.9 442.6, 585.6 485.9, 638.5 538.8" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(559.0,469.2) rotate(37.2)"/>
+    <path d="M 638.5 538.8 C 665.0 620.6, 672.2 707.2, 744.4 745.7" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 638.5 538.8 C 665.0 620.6, 672.2 707.2, 744.4 745.7" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(676.0,662.9) rotate(68.0)"/>
+    <path d="M 744.4 745.7 C 816.6 755.3, 883.9 731.3, 946.5 697.6" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 744.4 745.7 C 816.6 755.3, 883.9 731.3, 946.5 697.6" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(853.1,736.8) rotate(-15.7)"/>
+    <path d="M 946.5 697.6 C 941.7 620.6, 917.6 548.4, 903.2 495.5" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 946.5 697.6 C 941.7 620.6, 917.6 548.4, 903.2 495.5" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(927.4,583.4) rotate(-104.0)"/>
+    <path d="M 903.2 495.5 C 975.3 514.7, 1001.8 536.4, 1018.6 471.4" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 903.2 495.5 C 975.3 514.7, 1001.8 536.4, 1018.6 471.4" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(983.7,515.0) rotate(-3.9)"/>
+    <path d="M 1018.6 471.4 C 1076.4 529.2, 1134.1 582.1, 1220.7 582.1" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 1018.6 471.4 C 1076.4 529.2, 1134.1 582.1, 1220.7 582.1" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(1112.8,550.8) rotate(31.2)"/>
+    <path d="M 1220.7 582.1 C 1278.5 596.5, 1307.3 692.8, 1389.1 757.7" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 1220.7 582.1 C 1278.5 596.5, 1307.3 692.8, 1389.1 757.7" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(1298.9,655.1) rotate(54.1)"/>
+    <path d="M 1389.1 757.7 C 1456.5 752.9, 1509.4 704.8, 1538.3 642.2" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 1389.1 757.7 C 1456.5 752.9, 1509.4 704.8, 1538.3 642.2" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(1481.2,719.1) rotate(-40.2)"/>
+    <path d="M 1538.3 642.2 C 1567.2 572.5, 1555.1 514.7, 1523.9 471.4" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 1538.3 642.2 C 1567.2 572.5, 1555.1 514.7, 1523.9 471.4" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(1553.2,543.5) rotate(-97.9)"/>
+    <path d="M 1523.9 471.4 C 1572.0 481.1, 1612.9 512.3, 1620.1 553.2" fill="none" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="6.5" filter="url(#glowCyan)"/>
+    <path d="M 1523.9 471.4 C 1572.0 481.1, 1612.9 512.3, 1620.1 553.2" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="11 6" marker-mid="url(#arrowSwoop)"/>
+    <polygon points="0,-5 10,0 0,5 2.5,0" fill="#67e8f9" transform="translate(1589.3,502.3) rotate(40.8)"/>
+    <circle cx="253.6" cy="635.0" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="465.3" cy="408.9" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="638.5" cy="538.8" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="744.4" cy="745.7" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="946.5" cy="697.6" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="903.2" cy="495.5" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1018.6" cy="471.4" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1220.7" cy="582.1" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1389.1" cy="757.7" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1538.3" cy="642.2" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1523.9" cy="471.4" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <circle cx="1620.1" cy="553.2" r="18" fill="none" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.85" filter="url(#glowGold)"/>
+    <path d="M 1665.1 568.2 L 1455.1 581.2" stroke="#facc15" stroke-width="2.2" stroke-dasharray="4 4" marker-end="url(#arrowScenic)"/>
+    <text x="1600.1" y="609.2" text-anchor="middle" class="mono" font-size="9.5" fill="#fde047" font-weight="700">180° 全城大回望 (Y=465m)</text>
+    <rect x="119.1" y="134" width="370" height="22" rx="5" fill="#0b1220" fill-opacity="0.82"/>
+    <text x="304.1" y="149" text-anchor="middle" class="zone-lbl" fill="#fbbf24">ACT I · 吴西古刹与斜塔 (Golden Hour t=0.12–0.22)</text>
+    <text x="840.6" y="149" text-anchor="middle" class="zone-lbl" fill="#f472b6">ACT II · 姑苏古城 · 园林古塔水巷 (Dusk t=0.34–0.68)</text>
+    <text x="1211.1" y="149" text-anchor="middle" class="zone-lbl" fill="#a78bfa">ACT III · 时空之门 (t=0.78)</text>
+    <text x="1523.9" y="149" text-anchor="middle" class="zone-lbl" fill="#38bdf8">ACT IV · 现代金鸡湖天际线 (Blue Hour Night t=0.85–1.00)</text>
+    <line x1="253.6" y1="635.0" x2="235.6" y2="763.0" stroke="#f59e0b" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="253.6" cy="635.0" r="11" fill="#f59e0b" stroke="#090d16" stroke-width="2"/>
+    <text x="253.6" y="639.0" text-anchor="middle" class="st-num">01</text>
+    <rect x="112.6" y="737.0" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="112.6" y="737.0" width="4" height="52" rx="2" fill="#f59e0b"/>
+    <text x="123.6" y="754.0" class="st-title">01 寒山寺 &amp; 枫桥</text>
+    <text x="123.6" y="768.0" class="st-sub">(-1360, 110) · H=44m · t=0.12</text>
+    <text x="123.6" y="780.0" class="st-sub" fill="#94a3b8">Footprint 180×150m · blender-west</text>
+    <line x1="465.3" y1="408.9" x2="280.3" y2="300.9" stroke="#f59e0b" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="465.3" cy="408.9" r="11" fill="#f59e0b" stroke="#090d16" stroke-width="2"/>
+    <text x="465.3" y="412.9" text-anchor="middle" class="st-num">02</text>
+    <rect x="157.3" y="274.9" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="157.3" y="274.9" width="4" height="52" rx="2" fill="#f59e0b"/>
+    <text x="168.3" y="291.9" class="st-title">02 西园寺 &amp; 虎丘斜塔</text>
+    <text x="168.3" y="305.9" class="st-sub">(-920, -360) · H=82m · t=0.22</text>
+    <text x="168.3" y="317.9" class="st-sub" fill="#94a3b8">Footprint 220×220m · blender-west</text>
+    <line x1="638.5" y1="538.8" x2="413.5" y2="502.8" stroke="#f59e0b" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="638.5" cy="538.8" r="11" fill="#f59e0b" stroke="#090d16" stroke-width="2"/>
+    <text x="638.5" y="542.8" text-anchor="middle" class="st-num">03</text>
+    <rect x="290.5" y="476.8" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="290.5" y="476.8" width="4" height="52" rx="2" fill="#f59e0b"/>
+    <text x="301.5" y="493.8" class="st-title">03 留园</text>
+    <text x="301.5" y="507.8" class="st-sub">(-560, -90) · H=16m · t=0.34</text>
+    <text x="301.5" y="519.8" class="st-sub" fill="#94a3b8">Footprint 140×120m · blender-west</text>
+    <line x1="744.4" y1="745.7" x2="529.4" y2="847.7" stroke="#f59e0b" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="744.4" cy="745.7" r="11" fill="#f59e0b" stroke="#090d16" stroke-width="2"/>
+    <text x="744.4" y="749.7" text-anchor="middle" class="st-num">04</text>
+    <rect x="406.4" y="821.7" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="406.4" y="821.7" width="4" height="52" rx="2" fill="#f59e0b"/>
+    <text x="417.4" y="838.7" class="st-title">04 盘门三景 &amp; 沧浪亭</text>
+    <text x="417.4" y="852.7" class="st-sub">(-340, 340) · H=56m · t=0.44</text>
+    <text x="417.4" y="864.7" class="st-sub" fill="#94a3b8">Footprint 280×150m · blender-west</text>
+    <line x1="946.5" y1="697.6" x2="1041.5" y2="799.6" stroke="#f472b6" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="946.5" cy="697.6" r="11" fill="#f472b6" stroke="#090d16" stroke-width="2"/>
+    <text x="946.5" y="701.6" text-anchor="middle" class="st-num">05</text>
+    <rect x="918.5" y="773.6" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f472b6" stroke-width="1.2"/>
+    <rect x="918.5" y="773.6" width="4" height="52" rx="2" fill="#f472b6"/>
+    <text x="929.5" y="790.6" class="st-title">05 网师园 &amp; 苏州双塔</text>
+    <text x="929.5" y="804.6" class="st-sub">(80, 240) · H=36m · t=0.52</text>
+    <text x="929.5" y="816.6" class="st-sub" fill="#94a3b8">Footprint 200×180m · blender-gusu</text>
+    <line x1="903.2" y1="495.5" x2="698.2" y2="383.5" stroke="#f472b6" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="903.2" cy="495.5" r="11" fill="#f472b6" stroke="#090d16" stroke-width="2"/>
+    <text x="903.2" y="499.5" text-anchor="middle" class="st-num">06</text>
+    <rect x="575.2" y="357.5" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f472b6" stroke-width="1.2"/>
+    <rect x="575.2" y="357.5" width="4" height="52" rx="2" fill="#f472b6"/>
+    <text x="586.2" y="374.5" class="st-title">06 北寺塔 &amp; 平江路水巷</text>
+    <text x="586.2" y="388.5" class="st-sub">(-10, -180) · H=78m · t=0.60</text>
+    <text x="586.2" y="400.5" class="st-sub" fill="#94a3b8">Footprint 250×220m · blender-gusu</text>
+    <line x1="1018.6" y1="471.4" x2="1073.6" y2="347.4" stroke="#f472b6" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1018.6" cy="471.4" r="11" fill="#f472b6" stroke="#090d16" stroke-width="2"/>
+    <text x="1018.6" y="475.4" text-anchor="middle" class="st-num">07</text>
+    <rect x="950.6" y="321.4" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#f472b6" stroke-width="1.2"/>
+    <rect x="950.6" y="321.4" width="4" height="52" rx="2" fill="#f472b6"/>
+    <text x="961.6" y="338.4" class="st-title">07 狮子林 · 拙政园 &amp; 苏州博物馆</text>
+    <text x="961.6" y="352.4" class="st-sub">(230, -230) · H=20m · t=0.68</text>
+    <text x="961.6" y="364.4" class="st-sub" fill="#94a3b8">Footprint 260×240m · blender-gusu</text>
+    <line x1="1220.7" y1="582.1" x2="1192.7" y2="438.1" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1220.7" cy="582.1" r="11" fill="#38bdf8" stroke="#090d16" stroke-width="2"/>
+    <text x="1220.7" y="586.1" text-anchor="middle" class="st-num">08</text>
+    <rect x="1069.7" y="412.1" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="1069.7" y="412.1" width="4" height="52" rx="2" fill="#38bdf8"/>
+    <text x="1080.7" y="429.1" class="st-title">08 东方之门 &amp; 苏州中心</text>
+    <text x="1080.7" y="443.1" class="st-sub">(650, 0) · H=302m · t=0.78</text>
+    <text x="1080.7" y="455.1" class="st-sub" fill="#94a3b8">Footprint 220×280m · blender-modern</text>
+    <line x1="1389.1" y1="757.7" x2="1379.1" y2="871.7" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1389.1" cy="757.7" r="11" fill="#38bdf8" stroke="#090d16" stroke-width="2"/>
+    <text x="1389.1" y="761.7" text-anchor="middle" class="st-num">09</text>
+    <rect x="1256.1" y="845.7" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="1256.1" y="845.7" width="4" height="52" rx="2" fill="#38bdf8"/>
+    <text x="1267.1" y="862.7" class="st-title">09 李公堤</text>
+    <text x="1267.1" y="876.7" class="st-sub">(1000, 365) · H=24m · t=0.85</text>
+    <text x="1267.1" y="888.7" class="st-sub" fill="#94a3b8">Footprint 380×110m · blender-modern</text>
+    <line x1="1538.3" y1="642.2" x2="1617.0" y2="754.2" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1538.3" cy="642.2" r="11" fill="#38bdf8" stroke="#090d16" stroke-width="2"/>
+    <text x="1538.3" y="646.2" text-anchor="middle" class="st-num">10</text>
+    <rect x="1494.0" y="728.2" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="1494.0" y="728.2" width="4" height="52" rx="2" fill="#38bdf8"/>
+    <text x="1505.0" y="745.2" class="st-title">10 苏州当代美术馆 &amp; 苏州之眼摩天轮</text>
+    <text x="1505.0" y="759.2" class="st-sub">(1310, 125) · H=130m · t=0.90</text>
+    <text x="1505.0" y="771.2" class="st-sub" fill="#94a3b8">Footprint 220×220m · blender-modern</text>
+    <line x1="1523.9" y1="471.4" x2="1585.9" y2="336.4" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1523.9" cy="471.4" r="11" fill="#38bdf8" stroke="#090d16" stroke-width="2"/>
+    <text x="1523.9" y="475.4" text-anchor="middle" class="st-num">11</text>
+    <rect x="1462.9" y="310.4" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="1462.9" y="310.4" width="4" height="52" rx="2" fill="#38bdf8"/>
+    <text x="1473.9" y="327.4" class="st-title">11 苏州文化艺术中心 &amp; 月光码头</text>
+    <text x="1473.9" y="341.4" class="st-sub">(1280, -230) · H=42m · t=0.94</text>
+    <text x="1473.9" y="353.4" class="st-sub" fill="#94a3b8">Footprint 240×190m · blender-modern</text>
+    <line x1="1620.1" y1="553.2" x2="1617.0" y2="381.2" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2"/>
+    <circle cx="1620.1" cy="553.2" r="11" fill="#38bdf8" stroke="#090d16" stroke-width="2"/>
+    <text x="1620.1" y="557.2" text-anchor="middle" class="st-num">12</text>
+    <rect x="1494.0" y="355.2" width="246" height="52" rx="6" fill="#0b1220" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="1494.0" y="355.2" width="4" height="52" rx="2" fill="#38bdf8"/>
+    <text x="1505.0" y="372.2" class="st-title">12 苏州国金中心 IFS (450m)</text>
+    <text x="1505.0" y="386.2" class="st-sub">(1480, -60) · H=450m · t=1.00</text>
+    <text x="1505.0" y="398.2" class="st-sub" fill="#94a3b8">Footprint 180×180m · blender-modern</text>
+  </g>
+  <text x="138.1" y="117" text-anchor="middle" class="grid-lbl">-1600m</text>
+  <text x="138.1" y="1055.2" text-anchor="middle" class="grid-lbl">-1600m</text>
+  <text x="234.3" y="117" text-anchor="middle" class="grid-lbl">-1400m</text>
+  <text x="234.3" y="1055.2" text-anchor="middle" class="grid-lbl">-1400m</text>
+  <text x="330.6" y="117" text-anchor="middle" class="grid-lbl">-1200m</text>
+  <text x="330.6" y="1055.2" text-anchor="middle" class="grid-lbl">-1200m</text>
+  <text x="426.8" y="117" text-anchor="middle" class="grid-lbl">-1000m</text>
+  <text x="426.8" y="1055.2" text-anchor="middle" class="grid-lbl">-1000m</text>
+  <text x="523.0" y="117" text-anchor="middle" class="grid-lbl">-800m</text>
+  <text x="523.0" y="1055.2" text-anchor="middle" class="grid-lbl">-800m</text>
+  <text x="619.3" y="117" text-anchor="middle" class="grid-lbl">-600m</text>
+  <text x="619.3" y="1055.2" text-anchor="middle" class="grid-lbl">-600m</text>
+  <text x="715.5" y="117" text-anchor="middle" class="grid-lbl">-400m</text>
+  <text x="715.5" y="1055.2" text-anchor="middle" class="grid-lbl">-400m</text>
+  <text x="811.7" y="117" text-anchor="middle" class="grid-lbl">-200m</text>
+  <text x="811.7" y="1055.2" text-anchor="middle" class="grid-lbl">-200m</text>
+  <text x="908.0" y="117" text-anchor="middle" class="grid-lbl">0m</text>
+  <text x="908.0" y="1055.2" text-anchor="middle" class="grid-lbl">0m</text>
+  <text x="1004.2" y="117" text-anchor="middle" class="grid-lbl">200m</text>
+  <text x="1004.2" y="1055.2" text-anchor="middle" class="grid-lbl">200m</text>
+  <text x="1100.4" y="117" text-anchor="middle" class="grid-lbl">400m</text>
+  <text x="1100.4" y="1055.2" text-anchor="middle" class="grid-lbl">400m</text>
+  <text x="1196.7" y="117" text-anchor="middle" class="grid-lbl">600m</text>
+  <text x="1196.7" y="1055.2" text-anchor="middle" class="grid-lbl">600m</text>
+  <text x="1292.9" y="117" text-anchor="middle" class="grid-lbl">800m</text>
+  <text x="1292.9" y="1055.2" text-anchor="middle" class="grid-lbl">800m</text>
+  <text x="1389.1" y="117" text-anchor="middle" class="grid-lbl">1000m</text>
+  <text x="1389.1" y="1055.2" text-anchor="middle" class="grid-lbl">1000m</text>
+  <text x="1485.4" y="117" text-anchor="middle" class="grid-lbl">1200m</text>
+  <text x="1485.4" y="1055.2" text-anchor="middle" class="grid-lbl">1200m</text>
+  <text x="1581.6" y="117" text-anchor="middle" class="grid-lbl">1400m</text>
+  <text x="1581.6" y="1055.2" text-anchor="middle" class="grid-lbl">1400m</text>
+  <text x="1677.8" y="117" text-anchor="middle" class="grid-lbl">1600m</text>
+  <text x="1677.8" y="1055.2" text-anchor="middle" class="grid-lbl">1600m</text>
+  <text x="80" y="201.2" text-anchor="end" class="grid-lbl">-800</text>
+  <text x="1760.0" y="201.2" text-anchor="start" class="grid-lbl">-800</text>
+  <text x="80" y="297.4" text-anchor="end" class="grid-lbl">-600</text>
+  <text x="1760.0" y="297.4" text-anchor="start" class="grid-lbl">-600</text>
+  <text x="80" y="393.6" text-anchor="end" class="grid-lbl">-400</text>
+  <text x="1760.0" y="393.6" text-anchor="start" class="grid-lbl">-400</text>
+  <text x="80" y="489.9" text-anchor="end" class="grid-lbl">-200</text>
+  <text x="1760.0" y="489.9" text-anchor="start" class="grid-lbl">-200</text>
+  <text x="80" y="586.1" text-anchor="end" class="grid-lbl">0</text>
+  <text x="1760.0" y="586.1" text-anchor="start" class="grid-lbl">0</text>
+  <text x="80" y="682.3" text-anchor="end" class="grid-lbl">200</text>
+  <text x="1760.0" y="682.3" text-anchor="start" class="grid-lbl">200</text>
+  <text x="80" y="778.6" text-anchor="end" class="grid-lbl">400</text>
+  <text x="1760.0" y="778.6" text-anchor="start" class="grid-lbl">400</text>
+  <text x="80" y="874.8" text-anchor="end" class="grid-lbl">600</text>
+  <text x="1760.0" y="874.8" text-anchor="start" class="grid-lbl">600</text>
+  <text x="80" y="971.0" text-anchor="end" class="grid-lbl">800</text>
+  <text x="1760.0" y="971.0" text-anchor="start" class="grid-lbl">800</text>
+  <text x="920.0" y="101" text-anchor="middle" class="mono" font-size="11" fill="#94a3b8">← WEST (-X)     WORLD X AXIS (3,450m Continuous Basin)     EAST (+X) →</text>
+  <text x="26" y="582.1" text-anchor="middle" class="mono" font-size="11" fill="#94a3b8" transform="rotate(-90 26 582.1)">← NORTH (-Z)   WORLD Z AXIS (1,900m)   SOUTH (+Z) →</text>
+  <g transform="translate(142,987.2028985507245)">
+    <circle r="28" fill="#0b1220" fill-opacity="0.88" stroke="#475569" stroke-width="1.2"/>
+    <polygon points="0,-21 5,-4 0,-8 -5,-4" fill="#f43f5e"/>
+    <polygon points="0,21 5,4 0,8 -5,4" fill="#94a3b8"/>
+    <polygon points="21,0 4,5 8,0 4,-5" fill="#94a3b8"/>
+    <polygon points="-21,0 -4,5 -8,0 -4,-5" fill="#94a3b8"/>
+    <text x="0" y="-23" text-anchor="middle" class="mono" font-size="9" fill="#f43f5e" font-weight="700">N (-Z)</text>
+    <text x="0" y="37" text-anchor="middle" class="mono" font-size="8.5" fill="#94a3b8">S (+Z)</text>
+  </g>
+  <rect x="90" y="1073.2" width="1660.0" height="52" rx="8" fill="#111827" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="1095.2" class="legend-hdr">LEGEND 图例</text>
+  <circle cx="220" cy="1091.2" r="6" fill="#f59e0b"/><text x="233" y="1095.2" class="legend-txt">blender-west (Stations 01–04)</text>
+  <circle cx="430" cy="1091.2" r="6" fill="#f472b6"/><text x="443" y="1095.2" class="legend-txt">blender-gusu (Stations 05–07)</text>
+  <circle cx="640" cy="1091.2" r="6" fill="#38bdf8"/><text x="653" y="1095.2" class="legend-txt">blender-modern (Stations 08–12)</text>
+
+  <circle cx="885" cy="1091.2" r="7" fill="none" stroke="#fbbf24" stroke-width="2"/><text x="899" y="1095.2" class="legend-txt">Scenic Orbit (1×, FOV 46°)</text>
+  <line x1="1085" y1="1091.2" x2="1135" y2="1091.2" stroke="#22d3ee" stroke-width="2.6" stroke-dasharray="8 4"/><text x="1144" y="1095.2" class="legend-txt">High-Speed Swoop (5.5–8×, FOV 82°, Roll ±22°)</text>
+  <circle cx="1445" cy="1091.2" r="3.5" fill="#ffffff"/><text x="1456" y="1095.2" class="legend-txt">HeroView Cam</text>
+
+  <!-- Scale bar (500m) -->
+  <line x1="1570" y1="1093.2" x2="1714.3" y2="1093.2" stroke="#f8fafc" stroke-width="2.5"/>
+  <line x1="1570" y1="1087.2" x2="1570" y2="1099.2" stroke="#f8fafc" stroke-width="2"/>
+  <line x1="1714.3" y1="1087.2" x2="1714.3" y2="1099.2" stroke="#f8fafc" stroke-width="2"/>
+  <text x="1642.2" y="1111.2" text-anchor="middle" class="mono" font-size="10" fill="#cbd5e1">300m True Scale</text>
+
+  <text x="110" y="1115.2" class="mono" font-size="10" fill="#94a3b8">Clearances: Wumen Bridge &amp; Ligongdi Arch ≥18m W × ≥10m H  |  Gate of the Orient Arch = 62m W × 195m H (Center X=650, Y=125, Z=0)  |  Total Runtime ≈ 115s</text>
+</svg>
